@@ -2,6 +2,7 @@ const numDots = 60;
 const screenHeight = window.screen.availHeight;
 const screenWidth = window.screen.availWidth;
 const clientheight = document.documentElement.clientHeight;
+const clientWidth = document.documentElement.clientWidth;
 
 function createNDots (n) {
     var dots = '';
@@ -18,8 +19,8 @@ function setUpDotPositions () {
         $(`#dot-${i}`).animate({
             top: `${Math.floor(Math.random() * clientheight)}px`,
             bottom: `${Math.floor(Math.random() * clientheight)}px`,
-            left: `${Math.floor(Math.random() * screenWidth)}px`,
-            right: `${Math.floor(Math.random() * screenWidth)}px`,
+            left: `${Math.floor(Math.random() * clientWidth)}px`,
+            right: `${Math.floor(Math.random() *clientWidth)}px`,
             height: aniHeight,
             width: aniWidth,
             opacity: Math.random()
@@ -28,12 +29,9 @@ function setUpDotPositions () {
 }
 
 $(document).ready(function () {
-
     var dots = createNDots(numDots);
     var hasBeenRun = false;
-
     $('.container').append(dots);
-
     $('.starter').click(function() {
         if (!hasBeenRun) {
             $('.dot').css('visibility', 'visible');
@@ -41,6 +39,5 @@ $(document).ready(function () {
         }
         setUpDotPositions();
     });
-
 });
 

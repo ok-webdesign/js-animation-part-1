@@ -1,42 +1,57 @@
 $bg-color: #202236;
 $dot-color: #f8f8cb;
 
+$aniDotDiameter: 30px;
+$btnDotDiameter: 150px;
+$btnFontSize: 1.5em;
+
 * {
     margin: 0;
     padding: 0;
 }
 
-body {
+@mixin flex-box-centered {
 
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $bg-color;
+
+}
+
+@mixin dot ($diameter) {
+
+    height: $diameter;
+    width: $diameter;
+    border-radius: 50%;
+    border: none;
+
+}
+
+body {
+
+    @include flex-box-centered;
+
     overflow: hidden;
+    background-color: $bg-color;
 
     .container {
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        perspective: 1000;
-        opacity: 0.55; 
+        @include flex-box-centered;
+
         height: 100vh;
 
         .starter {
 
-            height: 150px;
-            width: 150px;
-            border-radius: 50%;
-            border: none;
-            background-color: rgba(#f8f8cb, 0.8);
+            @include dot ($btnDotDiameter);
+
+            font-size: $btnFontSize;
             font-family: 'Abril Fatface', cursive;
-            font-size: 1.5em;
             color: $bg-color;
+            background-color: rgba($dot-color, 0.8);
 
             &:hover {
 
-                background-color: rgba(#f8f8cb, 1);
+                background-color: rgba($dot-color, 1);
 
             }
 
@@ -44,13 +59,11 @@ body {
 
         .dot {
 
+            @include dot ($aniDotDiameter);
+
             position: fixed;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: $dot-color;
-            border: none;
             visibility: hidden;
+            background-color: $dot-color;
 
         }
 
