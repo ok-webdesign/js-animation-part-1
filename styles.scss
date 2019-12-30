@@ -21,8 +21,26 @@ body {
         justify-content: center;
         perspective: 1000;
         opacity: 0.55; 
-        background-color: white;
         height: 100vh;
+
+        .starter {
+
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            border: none;
+            background-color: rgba(#f8f8cb, 0.8);
+            font-family: 'Abril Fatface', cursive;
+            font-size: 1.5em;
+            color: $bg-color;
+
+            &:hover {
+
+                background-color: rgba(#f8f8cb, 1);
+
+            }
+
+        }
 
         .dot {
 
@@ -32,6 +50,7 @@ body {
             border-radius: 50%;
             background-color: $dot-color;
             border: none;
+            visibility: hidden;
 
         }
 

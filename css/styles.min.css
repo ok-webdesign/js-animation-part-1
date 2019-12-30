@@ -30,8 +30,22 @@ body .container {
   -webkit-perspective: 1000;
           perspective: 1000;
   opacity: 0.55;
-  background-color: white;
   height: 100vh;
+}
+
+body .container .starter {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(248, 248, 203, 0.8);
+  font-family: 'Abril Fatface', cursive;
+  font-size: 1.5em;
+  color: #202236;
+}
+
+body .container .starter:hover {
+  background-color: #f8f8cb;
 }
 
 body .container .dot {
@@ -41,5 +55,6 @@ body .container .dot {
   border-radius: 50%;
   background-color: #f8f8cb;
   border: none;
+  visibility: hidden;
 }
 /*# sourceMappingURL=styles.min.css.map */
