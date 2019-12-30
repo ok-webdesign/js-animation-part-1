@@ -1,0 +1,40 @@
+$bg-color: #202236;
+$dot-color: #f8f8cb;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-color;
+    overflow: hidden;
+
+    .container {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 1000;
+        opacity: 0.55; 
+        background-color: white;
+        height: 100vh;
+
+        .dot {
+
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: $dot-color;
+            border: none;
+
+        }
+
+    }
+
+}
